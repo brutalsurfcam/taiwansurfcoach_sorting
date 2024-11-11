@@ -87,8 +87,8 @@
                         <p>性別: ${coach.性別}</p>
                         <p>衝浪板類型: ${coach.衝浪板類型}</p>
                         <p>賽事級別: ${coach.賽事級別}</p>
-                        <p>IG聯絡方式: ${coach.IG聯絡方式 || 'N/A'}</p>
-                        <p>衝浪學校IG: ${coach.衝浪學校IG || 'N/A'}</p>
+                        <p>IG聯絡方式: <a href="https://instagram.com/${coach.IG聯絡方式}" target="_blank">${coach.IG聯絡方式 || 'N/A'}</a></p>
+                        <p>衝浪學校IG: <a href="https://instagram.com/${coach.衝浪學校IG}" target="_blank">${coach.衝浪學校IG || 'N/A'}</a></p>
                     </div>
                 `;
                 coachList.innerHTML += coachCard;

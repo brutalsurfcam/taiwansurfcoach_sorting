@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surf Coach Search</title>
+    <style>
+        /* 簡單樣式 */
+        .coach-card {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+        }
+        .coach-card h2 {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>衝浪教練檢索</h1>
+
+    <!-- 篩選表單 -->
+    <form id="filter-form">
+        <label for="地區">地區:</label>
+        <select id="地區">
+            <option value="">--選擇地區--</option>
+            <option value="宜蘭">宜蘭</option>
+            <option value="恆春">恆春</option>
+            <option value="台中">台中</option>
+            <option value="花蓮">花蓮</option>
+            <option value="台南">台南</option>
+        </select>
+
+        <label for="gender">性別:</label>
+        <select id="gender">
+            <option value="">--選擇性別--</option>
+            <option value="男">男</option>
+            <option value="女">女</option>
+        </select>
+
+        <label for="board_type">衝浪板類型:</label>
+        <select id="board_type">
+            <option value="">--選擇板類型--</option>
+            <option value="長板">長板</option>
+            <option value="短板">短板</option>
+        </select>
+
+        <button type="button" onclick="filterCoaches()">搜尋</button>
+    </form>
+
+    <!-- 顯示教練結果 -->
+    <div id="coach-list"></div>
+
+    <!-- 引入Axios庫 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- JavaScript代碼 -->
+    <script>
+        function filterCoaches() {
+            // 取得表單的篩選條件
+            const 地區 = document.getElementById('地區').value;
+            const gender = document.getElementById('gender').value;
+            const board_type = document.getElementById('board type').value;
+
+            // 發送篩選請求給後端
+            axios.post('http://localhost:8080/filter-coaches', { // 更新為正確的 URL
+                地區: 地區,
+                gender: gender,
+                board_type: board_type
+            })
+            .then(response => {
+                const coaches = response.data; // 假設後端返回的是教練列表
+                const coachList = document.getElementById('coach-list');
+                coachList.innerHTML = ''; // 清空現有的結果
+
+                // 將每位教練的資料生成HTML並添加到頁面上
+                coaches.forEach(coach => {
+                    const coachCard = `
+                        <div class="coach-card">
+                            <h2>${coach.name}</h2>
+                            <p>地區: ${coach.地區}</p>
+                            <p>性別: ${coach.gender}</p>
+                            <p>衝浪板類型: ${coach.board_type}</p>
+                            <p>賽事級別: ${coach.level}</p>
+                            <p>IG聯絡方式: <a href="${coach.instagram}" target="_blank">${coach.instagram}</a></p>
+                            <p>衝浪學校IG: <a href="${coach.surf_school_instagram}" target="_blank">${coach.surf_school_instagram}</a></p>
+                        </div>
+                    `;
+                    coachList.innerHTML += coachCard;
+                });
+            })
+            .catch(error => {
+                console.error('篩選失敗：', error);
+            });
+        }
+    </script>
+</body>
+</html>

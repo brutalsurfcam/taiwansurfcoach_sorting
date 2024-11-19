@@ -11,12 +11,13 @@
             color: #333;
             margin: 0;
             padding: 20px;
+            box-sizing: border-box;
         }
 
         header {
             background-color: #0077B6;
             color: white;
-            padding: 20px 0;
+            padding: 20px 10px;
             text-align: center;
             margin-bottom: 20px;
         }
@@ -28,18 +29,20 @@
         }
 
         .header-img {
-            width: 80px; /* 設置大頭貼的寬度 */
-            height: 80px; /* 設置大頭貼的高度 */
-            border-radius: 50%; /* 圓形效果 */
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
             margin-bottom: 10px;
         }
 
         h1 {
             color: white;
+            font-size: 24px;
         }
 
         form {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             margin-bottom: 20px;
             gap: 10px;
@@ -52,6 +55,9 @@
         select, button {
             padding: 5px 10px;
             font-size: 14px;
+            width: 100%;
+            max-width: 150px; /* 限制表單寬度 */
+            box-sizing: border-box;
         }
 
         button {
@@ -79,7 +85,9 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            width: 300px;
+            width: 100%;
+            max-width: 300px;
+            box-sizing: border-box;
             text-align: left;
         }
 
@@ -129,14 +137,42 @@
             padding: 10px 0;
             margin-top: 20px;
         }
+
+        /* 手機螢幕優化 */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 20px;
+            }
+
+            .header-img {
+                width: 60px;
+                height: 60px;
+            }
+
+            form {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            select, button {
+                max-width: 100%; /* 表單欄位全寬 */
+            }
+
+            .coach-card {
+                width: 100%; /* 卡片全寬 */
+            }
+
+            iframe {
+                height: 150px; /* 縮小影片高度 */
+            }
+        }
     </style>
 </head>
 <body>
 
     <header>
         <div class="header-content">
-            <!-- Instagram 大頭貼 -->
-            <img src="https://i.imgur.com/vbDsGRE.jpg" class="header-img">
+            <img src="https://www.instagram.com/brutalsurfcam/profile_picture/" alt="Brutal Surf Cam" class="header-img">
             <h1>衝浪教練檢索系統</h1>
         </div>
     </header>
@@ -173,57 +209,10 @@
     <!-- 顯示教練結果 -->
     <div id="coach-list"></div>
 
-    <!-- JavaScript代碼 -->
-    <script>
-        let coachData = [];
-
-        // 在頁面載入時讀取 coaches.json
-        window.onload = function() {
-            fetch('coaches.json')
-                .then(response => response.json())
-                .then(data => {
-                    coachData = data;
-                })
-                .catch(error => console.error('載入 JSON 資料失敗:', error));
-        };
-
-        function filterCoaches() {
-            const location = document.getElementById('location').value;
-            const gender = document.getElementById('gender').value;
-            const board_type = document.getElementById('board_type').value;
-
-            // 依篩選條件篩選資料
-            const filteredCoaches = coachData.filter(coach => {
-                return (!location || coach.地區 === location) &&
-                       (!gender || coach.性別 === gender) &&
-                       (!board_type || coach.衝浪板類型 === board_type);
-            });
-
-            const coachList = document.getElementById('coach-list');
-            coachList.innerHTML = '';
-
-            filteredCoaches.forEach(coach => {
-                const coachCard = `
-                    <div class="coach-card">
-                        <img src="${coach.photo_url}" style="max-width: 100%; height: auto;">
-                        <h2>${coach.教練}</h2> 
-                        <p>地區: ${coach.地區}</p>
-                        <p>性別: ${coach.性別}</p>
-                        <p>衝浪板類型: ${coach.衝浪板類型}</p>
-                        <p>賽事級別: ${coach.賽事級別}</p>
-                        <p>IG聯絡方式: <a href="https://instagram.com/${coach.IG聯絡方式}" target="_blank">${coach.IG聯絡方式 || 'N/A'}</a></p>
-                        <p>衝浪學校IG: <a href="https://instagram.com/${coach.衝浪學校IG}" target="_blank">${coach.衝浪學校IG || 'N/A'}</a></p>
-                        <iframe width="560" height="315" src="${coach.video_url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                `;
-                coachList.innerHTML += coachCard;
-            });
-        }
-    </script>
-
     <footer>
         <p>&copy; 2024 Surf Coach Finder. All rights reserved.</p>
     </footer>
 
 </body>
 </html>
+

@@ -5,34 +5,141 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Surf Coach Search</title>
     <style>
-        .coach-card {
-            border: 1px solid #ddd;
-            padding: 10px;
-            margin: 10px;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #EAF2F8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #0077B6;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header-content {
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: center;
         }
-        .coach-card img {
-            width: 200px; /* 固定圖片寬度 */
-            height: auto; /* 保持圖片比例 */
+
+        .header-img {
+            width: 80px; /* 設置大頭貼的寬度 */
+            height: 80px; /* 設置大頭貼的高度 */
+            border-radius: 50%; /* 圓形效果 */
             margin-bottom: 10px;
-            border-radius: 10px; /* 圓角效果 */
         }
-        .coach-card h2 {
-            margin: 0;
+
+        h1 {
+            color: white;
         }
-        iframe {
+
+        form {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            gap: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        select, button {
+            padding: 5px 10px;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #0077B6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #005F87;
+        }
+
+        #coach-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .coach-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: left;
+        }
+
+        .coach-card img {
             width: 100%;
-            max-width: 400px; /* 限制影片最大寬度 */
-            height: 250px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .coach-card iframe {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
             margin-top: 10px;
+            border: none;
+        }
+
+        .coach-card h2 {
+            margin: 10px 0;
+            color: #0077B6;
+        }
+
+        .coach-card p {
+            margin: 5px 0;
+        }
+
+        .coach-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        a {
+            color: #0077B6;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #0077B6;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>衝浪教練檢索</h1>
+
+    <header>
+        <div class="header-content">
+            <!-- Instagram 大頭貼 -->
+            <img src="https://i.imgur.com/vbDsGRE.jpg" class="header-img">
+            <h1>衝浪教練檢索系統</h1>
+        </div>
+    </header>
 
     <!-- 篩選表單 -->
     <form id="filter-form">
@@ -113,5 +220,10 @@
             });
         }
     </script>
+
+    <footer>
+        <p>&copy; 2024 Surf Coach Finder. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>

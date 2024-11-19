@@ -7,7 +7,9 @@
     "衝浪板類型": "長板",
     "賽事級別": "職業組",
     "IG聯絡方式": "howey.tw",
-    "衝浪學校IG": "southern.surfer"
+    "衝浪學校IG": "southern.surfer",
+    "photo_url": null,
+    "video_url": null
   },
   {
     "id": 2,
@@ -17,7 +19,9 @@
     "衝浪板類型": "長板",
     "賽事級別": "職業組",
     "IG聯絡方式": "chouchong.surf",
-    "衝浪學校IG": "surfing.notebook"
+    "衝浪學校IG": "surfing.notebook",
+    "photo_url": null,
+    "video_url": null
   },
   {
     "id": 3,
@@ -27,7 +31,9 @@
     "衝浪板類型": "長板",
     "賽事級別": "職業組",
     "IG聯絡方式": "itslucasyuen",
-    "衝浪學校IG": "lucassurfschool"
+    "衝浪學校IG": "lucassurfschool",
+    "photo_url": "https://drive.google.com/file/d/1GVzcUU80HAlXAbW22vLFA1T3wZ8LQPpf/view?usp=sharing",
+    "video_url": "https://drive.google.com/file/d/101ft7ViPN7fquyxkDh3XTpg2hLEadm3v/view?usp=sharing"
   },
   {
     "id": 4,
@@ -37,17 +43,21 @@
     "衝浪板類型": "短板",
     "賽事級別": "職業組",
     "IG聯絡方式": "yechinhao",
-    "衝浪學校IG": "surfchecktaiwan"
+    "衝浪學校IG": "surfchecktaiwan",
+    "photo_url": null,
+    "video_url": null
   },
   {
     "id": 5,
     "教練": "喬治",
     "性別": "男",
     "地區": "頭城",
-    "衝浪板類型": "長短板",
+    "衝浪板類型": "長板",
     "賽事級別": "長青組",
     "IG聯絡方式": "supergeorge_taiwan",
-    "衝浪學校IG": "supergeorgesurftaiwan"
+    "衝浪學校IG": "supergeorgesurftaiwan",
+    "photo_url": null,
+    "video_url": null
   },
   {
     "id": 6,
@@ -57,6 +67,8 @@
     "衝浪板類型": "長板",
     "賽事級別": "職業組",
     "IG聯絡方式": "wangqwei",
-    "衝浪學校IG": "taiwansurftour"
+    "衝浪學校IG": "taiwansurftour",
+    "photo_url": null,
+    "video_url": null
   }
 ]

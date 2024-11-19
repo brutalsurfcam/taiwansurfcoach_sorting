@@ -13,6 +13,16 @@
         .coach-card h2 {
             margin: 0;
         }
+        .coach-photo {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+        .coach-video {
+            width: 100%;
+            height: 300px;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -89,6 +99,12 @@
                         <p>賽事級別: ${coach.賽事級別}</p>
                         <p>IG聯絡方式: <a href="https://instagram.com/${coach.IG聯絡方式}" target="_blank">${coach.IG聯絡方式 || 'N/A'}</a></p>
                         <p>衝浪學校IG: <a href="https://instagram.com/${coach.衝浪學校IG}" target="_blank">${coach.衝浪學校IG || 'N/A'}</a></p>
+                        <div>
+                            <img src="${coach.photo_url}" alt="${coach.教練}的照片" class="coach-photo">
+                        </div>
+                        <div>
+                            <iframe class="coach-video" src="${coach.video_url}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
                     </div>
                 `;
                 coachList.innerHTML += coachCard;

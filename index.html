@@ -106,7 +106,7 @@
                         <p>賽事級別: ${coach.賽事級別}</p>
                         <p>IG聯絡方式: <a href="https://instagram.com/${coach.IG聯絡方式}" target="_blank">${coach.IG聯絡方式 || 'N/A'}</a></p>
                         <p>衝浪學校IG: <a href="https://instagram.com/${coach.衝浪學校IG}" target="_blank">${coach.衝浪學校IG || 'N/A'}</a></p>
-                        <iframe src="${coach.video_url}" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="${coach.video_url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 `;
                 coachList.innerHTML += coachCard;

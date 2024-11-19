@@ -9,19 +9,16 @@
             border: 1px solid #ddd;
             padding: 10px;
             margin: 10px;
-            display: flex; /* 使用 Flexbox */
-            flex-direction: row; /* 水平排列 */
-            align-items: flex-start; /* 文字與圖片頂部對齊 */
-            text-align: left; /* 文字靠左 */
-            gap: 10px; /* 圖片與文字間距 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
         .coach-card img {
             width: 200px; /* 固定圖片寬度 */
             height: auto; /* 保持圖片比例 */
+            margin-bottom: 10px;
             border-radius: 10px; /* 圓角效果 */
-        }
-        .coach-card div {
-            flex: 1; /* 讓文字內容佔據剩餘空間 */
         }
         .coach-card h2 {
             margin: 0;
@@ -99,25 +96,22 @@
             coachList.innerHTML = '';
 
             filteredCoaches.forEach(coach => {
-                const coachCard = `
+                const coachCard = 
                     <div class="coach-card">
-                        <img src="${coach.photo_url}" alt="${coach.教練}的照片">
-                        <div>
-                            <h2>${coach.教練}</h2>
-                            <p>地區: ${coach.地區}</p>
-                            <p>性別: ${coach.性別}</p>
-                            <p>衝浪板類型: ${coach.衝浪板類型}</p>
-                            <p>賽事級別: ${coach.賽事級別}</p>
-                            <p>IG聯絡方式: <a href="https://instagram.com/${coach.IG聯絡方式}" target="_blank">${coach.IG聯絡方式 || 'N/A'}</a></p>
-                            <p>衝浪學校IG: <a href="https://instagram.com/${coach.衝浪學校IG}" target="_blank">${coach.衝浪學校IG || 'N/A'}</a></p>
-                            <iframe src="${coach.video_url}" frameborder="0" allowfullscreen></iframe>
-                        </div>
+                        <img src="${coach.photo_url}" style="max-width: 100%; height: auto;">
+                        <h2>${coach.教練}</h2> 
+                        <p>地區: ${coach.地區}</p>
+                        <p>性別: ${coach.性別}</p>
+                        <p>衝浪板類型: ${coach.衝浪板類型}</p>
+                        <p>賽事級別: ${coach.賽事級別}</p>
+                        <p>IG聯絡方式: <a href="https://instagram.com/${coach.IG聯絡方式}" target="_blank">${coach.IG聯絡方式 || 'N/A'}</a></p>
+                        <p>衝浪學校IG: <a href="https://instagram.com/${coach.衝浪學校IG}" target="_blank">${coach.衝浪學校IG || 'N/A'}</a></p>
+                        <iframe src="${coach.video_url}" frameborder="0" allowfullscreen></iframe>
                     </div>
-                `;
+                ;
                 coachList.innerHTML += coachCard;
             });
         }
     </script>
 </body>
 </html>
-

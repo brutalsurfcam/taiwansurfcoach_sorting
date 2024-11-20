@@ -70,5 +70,29 @@
     "衝浪學校IG": "taiwansurftour",
     "photo_url": "https://i.imgur.com/qnYAmyG.jpg",
     "video_url": null
+  },
+  {
+    "id": 7,
+    "教練": "小毛",
+    "性別": "男",
+    "地區": "頭城",
+    "衝浪板類型": "長板/短板",
+    "賽事級別": "職業組",
+    "IG聯絡方式": "henry_soulsurf",
+    "衝浪學校IG": "ovss_taiwan",
+    "photo_url": "https://i.imgur.com/kUawW16.jpg",
+    "video_url": "https://www.youtube.com/embed/hxxC_v2X2SQ?si=XMYZSC1a9Mp7Cq3u"
+  },
+  {
+    "id": 8,
+    "教練": "大薯",
+    "性別": "男",
+    "地區": "頭城",
+    "衝浪板類型": "長板/短板",
+    "賽事級別": "職業組",
+    "IG聯絡方式": "dasu.han",
+    "衝浪學校IG": "stoked.surf.studio",
+    "photo_url": null,
+    "video_url": null
   }
 ]

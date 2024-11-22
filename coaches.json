@@ -8,8 +8,8 @@
     "賽事級別": "職業組",
     "IG聯絡方式": "howey.tw",
     "衝浪學校IG": "southern.surfer",
-    "photo_url": null,
-    "video_url": null
+    "photo_url": "https://i.imgur.com/rIjOUjI.jpg",
+    "video_url": "https://www.youtube.com/embed/QP-wwCA2SOA?si=JwqKlTgewdtiHykB"
   },
   {
     "id": 2,
@@ -56,8 +56,8 @@
     "賽事級別": "長青組",
     "IG聯絡方式": "supergeorge_taiwan",
     "衝浪學校IG": "supergeorgesurftaiwan",
-    "photo_url": "NULL",
-    "video_url": null
+    "photo_url": "https://i.imgur.com/BSocVSN.jpg",
+    "video_url": "https://www.youtube.com/embed/Ko2F23wCCRk?si=RAlTe6LKdxY7h8R0"
   },
   {
     "id": 6,
@@ -92,6 +92,90 @@
     "賽事級別": "職業組",
     "IG聯絡方式": "dasu.han",
     "衝浪學校IG": "stoked.surf.studio",
+    "photo_url": null,
+    "video_url": null
+  },
+  {
+    "id": 9,
+    "教練": "Fendi",
+    "性別": "女",
+    "地區": "頭城",
+    "衝浪板類型": "長板/短板",
+    "賽事級別": "職業組",
+    "IG聯絡方式": "surffendi",
+    "衝浪學校IG": "wavedancesurflife",
+    "photo_url": null,
+    "video_url": null
+  },
+  {
+    "id": 10,
+    "教練": "湘雲",
+    "性別": "女",
+    "地區": "頭城",
+    "衝浪板類型": "長板",
+    "賽事級別": "職業組",
+    "IG聯絡方式": "hsiang000612",
+    "衝浪學校IG": "hg.dream_surfing",
+    "photo_url": "https://i.imgur.com/15GaD7n.jpg",
+    "video_url": "https://www.youtube.com/embed/FcxdrF7ZUwU?si=IUTc5HucrwDs9AWl"
+  },
+  {
+    "id": 11,
+    "教練": "小巴",
+    "性別": "女",
+    "地區": "頭城",
+    "衝浪板類型": "長板/短板",
+    "賽事級別": "職業組",
+    "IG聯絡方式": "batseng",
+    "衝浪學校IG": "surf.tree",
+    "photo_url": null,
+    "video_url": null
+  },
+  {
+    "id": 12,
+    "教練": "小蓉",
+    "性別": "女",
+    "地區": "台東",
+    "衝浪板類型": "短板",
+    "賽事級別": "職業組",
+    "IG聯絡方式": "yun_jung_chung",
+    "衝浪學校IG": "colorfulsurf_taiwan",
+    "photo_url": null,
+    "video_url": null
+  },
+  {
+    "id": 13,
+    "教練": "凱文",
+    "性別": "男",
+    "地區": "花蓮",
+    "衝浪板類型": "長板/短板",
+    "賽事級別": "業餘組",
+    "IG聯絡方式": "k.w.1225",
+    "衝浪學校IG": "gosurf.behappy",
+    "photo_url": null,
+    "video_url": null
+  },
+  {
+    "id": 14,
+    "教練": "紅旗",
+    "性別": "男",
+    "地區": "頭城",
+    "衝浪板類型": "長板/短板",
+    "賽事級別": "職業組/業餘組",
+    "IG聯絡方式": "hongchi__s",
+    "衝浪學校IG": "haidia_surf",
+    "photo_url": "https://i.imgur.com/KLncuJy.jpg",
+    "video_url": "https://www.youtube.com/embed/MINYruET3b4?si=fISTS3c_i9kVrp4o"
+  },
+  {
+    "id": 15,
+    "教練": "Chris",
+    "性別": "男",
+    "地區": "恆春",
+    "衝浪板類型": "長板/短板",
+    "賽事級別": "賽事裁判",
+    "IG聯絡方式": "hsiachris",
+    "衝浪學校IG": "summerpoint2005",
     "photo_url": null,
     "video_url": null
   }

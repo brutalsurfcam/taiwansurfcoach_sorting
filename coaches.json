@@ -76,7 +76,7 @@
     "教練": "小毛",
     "性別": "男",
     "地區": "頭城",
-    "衝浪板類型": "長板/短板",
+    "衝浪板類型": "長板/中尺寸/短板",
     "賽事級別": "職業組",
     "IG聯絡方式": "henry_soulsurf",
     "衝浪學校IG": "ovss_taiwan",
@@ -124,12 +124,12 @@
     "教練": "小八",
     "性別": "女",
     "地區": "頭城",
-    "衝浪板類型": "長板/短板",
+    "衝浪板類型": "長板/中尺寸/短板",
     "賽事級別": "職業組",
     "IG聯絡方式": "batseng",
     "衝浪學校IG": "surf.tree",
-    "photo_url": null,
-    "video_url": null
+    "photo_url": "https://i.imgur.com/8l9iKwp.jpg",
+    "video_url": "https://www.youtube.com/embed/CKqzXy2eXFg?si=Km-JHcnNngqmqDsW"
   },
   {
     "id": 12,
@@ -148,12 +148,12 @@
     "教練": "凱文",
     "性別": "男",
     "地區": "花蓮",
-    "衝浪板類型": "長板/短板",
-    "賽事級別": "業餘組",
+    "衝浪板類型": "長板/中尺寸/短板",
+    "賽事級別": "職業組",
     "IG聯絡方式": "k.w.1225",
     "衝浪學校IG": "gosurf.behappy",
-    "photo_url": null,
-    "video_url": null
+    "photo_url": "https://i.imgur.com/WPcQGVl.jpg",
+    "video_url": "https://www.youtube.com/embed/YiVLlEpM_Ls?si=lFaLSPkWn9zAHX_F"
   },
   {
     "id": 14,
@@ -185,10 +185,34 @@
     "性別": "男",
     "地區": "頭城",
     "衝浪板類型": "短板",
-    "賽事級別": "ISA衝浪指導員",
+    "賽事級別": "職業組",
     "IG聯絡方式": "fanshunshun0708",
     "衝浪學校IG": "prosurf_taiwan",
     "photo_url": "https://i.imgur.com/ziivtJ8.jpg",
     "video_url": "https://www.youtube.com/embed/j4gtFjSU2Kg?si=9eYj73vFVGyjkUeW"
+  },
+  {
+    "id": 17,
+    "教練": "阿海",
+    "性別": "男",
+    "地區": "恆春",
+    "衝浪板類型": "長板/短板",
+    "賽事級別": "職業組",
+    "IG聯絡方式": "rory_macdonald01",
+    "衝浪學校IG": "good_surf_taiwan",
+    "photo_url": null,
+    "video_url": null
+  },
+  {
+    "id": 18,
+    "教練": "咕咕",
+    "性別": "男",
+    "地區": "恆春",
+    "衝浪板類型": "短板",
+    "賽事級別": "國巨衝浪主教練",
+    "IG聯絡方式": "gugu_surfing_life",
+    "衝浪學校IG": "yageosurf",
+    "photo_url": "https://i.imgur.com/oFUSId7.jpg",
+    "video_url": "https://www.youtube.com/embed/UWuZzmH6890?si=03Ajp49bEBWjy5Qm"
   }
 ]

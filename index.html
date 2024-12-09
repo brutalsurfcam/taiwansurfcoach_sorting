@@ -224,11 +224,11 @@
 
             if (filteredCoaches.length === 0) {
                 // 無符合條件的結果，顯示提示訊息
-                coachList.innerHTML = <p style="color: red; font-weight: bold;">目前此條件無適合人選</p>;
+                coachList.innerHTML = `<p style="color: red; font-weight: bold;">目前此條件無適合人選</p>`;
             } else {
                 // 顯示符合條件的教練資料
                 filteredCoaches.forEach(coach => {
-                    const coachCard = 
+                    const coachCard = `
                         <div class="coach-card">
                             <img src="${coach.photo_url}" alt="${coach.教練}">
                             <h2>${coach.教練}</h2>
@@ -240,7 +240,7 @@
                             <p>衝浪學校IG: <a href="https://instagram.com/${coach.衝浪學校IG}" target="_blank">${coach.衝浪學校IG || 'N/A'}</a></p>
                             <iframe src="${coach.video_url}" title="YouTube video player" allowfullscreen></iframe>
                         </div>
-                    ;
+                    `;
                     coachList.innerHTML += coachCard;
                 });
             }

@@ -205,46 +205,49 @@
         };
 
         function filterCoaches() {
-            const location = document.getElementById('location').value;
-            const gender = document.getElementById('gender').value;
-            const board_type = document.getElementById('board_type').value;
+    const location = document.getElementById('location').value;
+    const gender = document.getElementById('gender').value;
+    const board_type = document.getElementById('board_type').value;
 
-            const filteredCoaches = coachData.filter(coach => {
-                const matchBoardType = board_type 
-                    ? coach.衝浪板類型.split('/').some(type => type.includes(board_type)) 
-                    : true;
+    let filteredCoaches = coachData.filter(coach => {
+        const matchBoardType = board_type 
+            ? coach.衝浪板類型.split('/').some(type => type.includes(board_type)) 
+            : true;
 
-                return (!location || coach.地區 === location) &&
-                       (!gender || coach.性別 === gender) &&
-                       matchBoardType;
-            });
+        return (!location || coach.地區 === location) &&
+               (!gender || coach.性別 === gender) &&
+               matchBoardType;
+    });
 
-            const coachList = document.getElementById('coach-list');
-            coachList.innerHTML = '';
+    // 將篩選結果亂序排列
+    filteredCoaches = filteredCoaches.sort(() => Math.random() - 0.5);
 
-            if (filteredCoaches.length === 0) {
-                // 無符合條件的結果，顯示提示訊息
-                coachList.innerHTML = `<p style="color: red; font-weight: bold;">目前此條件無適合人選</p>`;
-            } else {
-                // 顯示符合條件的教練資料
-                filteredCoaches.forEach(coach => {
-                    const coachCard = `
-                        <div class="coach-card">
-                            <img src="${coach.photo_url}" alt="${coach.教練}">
-                            <h2>${coach.教練}</h2>
-                            <p>地區: ${coach.地區}</p>
-                            <p>性別: ${coach.性別}</p>
-                            <p>衝浪板類型: ${coach.衝浪板類型}</p>
-                            <p>賽事級別: ${coach.賽事級別}</p>
-                            <p>IG聯絡方式: <a href="https://instagram.com/${coach.IG聯絡方式}" target="_blank">${coach.IG聯絡方式 || 'N/A'}</a></p>
-                            <p>衝浪學校IG: <a href="https://instagram.com/${coach.衝浪學校IG}" target="_blank">${coach.衝浪學校IG || 'N/A'}</a></p>
-                            <iframe src="${coach.video_url}" title="YouTube video player" allowfullscreen></iframe>
-                        </div>
-                    `;
-                    coachList.innerHTML += coachCard;
-                });
-            }
-        }
+    const coachList = document.getElementById('coach-list');
+    coachList.innerHTML = '';
+
+    if (filteredCoaches.length === 0) {
+        // 無符合條件的結果，顯示提示訊息
+        coachList.innerHTML = `<p style="color: red; font-weight: bold;">目前此條件無適合人選</p>`;
+    } else {
+        // 顯示符合條件的教練資料
+        filteredCoaches.forEach(coach => {
+            const coachCard = `
+                <div class="coach-card">
+                    <img src="${coach.photo_url}" alt="${coach.教練}">
+                    <h2>${coach.教練}</h2>
+                    <p>地區: ${coach.地區}</p>
+                    <p>性別: ${coach.性別}</p>
+                    <p>衝浪板類型: ${coach.衝浪板類型}</p>
+                    <p>賽事級別: ${coach.賽事級別}</p>
+                    <p>IG聯絡方式: <a href="https://instagram.com/${coach.IG聯絡方式}" target="_blank">${coach.IG聯絡方式 || 'N/A'}</a></p>
+                    <p>衝浪學校IG: <a href="https://instagram.com/${coach.衝浪學校IG}" target="_blank">${coach.衝浪學校IG || 'N/A'}</a></p>
+                    <iframe src="${coach.video_url}" title="YouTube video player" allowfullscreen></iframe>
+                </div>
+            `;
+            coachList.innerHTML += coachCard;
+        });
+    }
+}
     </script>
 </body>
 </html>

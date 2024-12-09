@@ -219,15 +219,16 @@
                        matchBoardType;
             });
 
+            // 隨機排列教練卡
+            const shuffledCoaches = filteredCoaches.sort(() => Math.random() - 0.5);
+
             const coachList = document.getElementById('coach-list');
             coachList.innerHTML = '';
 
-            if (filteredCoaches.length === 0) {
-                // 無符合條件的結果，顯示提示訊息
+            if (shuffledCoaches.length === 0) {
                 coachList.innerHTML = `<p style="color: red; font-weight: bold;">目前此條件無適合人選</p>`;
             } else {
-                // 顯示符合條件的教練資料
-                filteredCoaches.forEach(coach => {
+                shuffledCoaches.forEach(coach => {
                     const coachCard = `
                         <div class="coach-card">
                             <img src="${coach.photo_url}" alt="${coach.教練}">

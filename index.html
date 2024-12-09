@@ -43,6 +43,7 @@
             justify-content: center;
             margin-bottom: 20px;
             gap: 10px;
+            flex-wrap: wrap;
         }
 
         label {
@@ -50,8 +51,11 @@
         }
 
         select, button {
-            padding: 5px 10px;
+            padding: 10px;
             font-size: 14px;
+            width: 150px;
+            max-width: 100%;
+            box-sizing: border-box;
         }
 
         button {
@@ -64,6 +68,17 @@
 
         button:hover {
             background-color: #005F87;
+        }
+
+        @media (max-width: 768px) {
+            form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            select, button {
+                width: 100%;
+            }
         }
 
         #coach-list {
@@ -135,22 +150,21 @@
 
     <header>
         <div class="header-content">
-            <!-- Instagram 大頭貼 -->
-            <img src="https://i.imgur.com/vbDsGRE.jpg"  class="header-img">
+        <a href="https://instagram.com/brutalsurfcam" target="_blank">
+            <img src="https://i.imgur.com/vbDsGRE.jpg" class="header-img" alt="Logo">
+        </a>
             <h1>衝浪教練檢索系統</h1>
         </div>
     </header>
 
-    <!-- 篩選表單 -->
     <form id="filter-form">
         <label for="location">地區:</label>
         <select id="location">
             <option value="">--選擇地區--</option>
             <option value="頭城">宜蘭</option>
             <option value="恆春">恆春</option>
-            <option value="台中">台中</option>
+            <option value="台東">台東</option>
             <option value="花蓮">花蓮</option>
-            <option value="台南">台南</option>
         </select>
 
         <label for="gender">性別:</label>
@@ -164,20 +178,23 @@
         <select id="board_type">
             <option value="">--選擇板類型--</option>
             <option value="長板">長板</option>
+            <option value="中尺寸">中尺寸</option>
             <option value="短板">短板</option>
         </select>
 
         <button type="button" onclick="filterCoaches()">搜尋</button>
     </form>
 
-    <!-- 顯示教練結果 -->
     <div id="coach-list"></div>
 
-    <!-- JavaScript代碼 -->
+    <footer>
+        <p>&copy; 2024 Surf Coach Finder. All rights reserved.</p>
+    </footer>
+
     <script>
         let coachData = [];
 
-        // 在頁面載入時讀取 coaches.json
+        // 載入 JSON 資料
         window.onload = function() {
             fetch('coaches.json')
                 .then(response => response.json())
@@ -192,41 +209,42 @@
             const gender = document.getElementById('gender').value;
             const board_type = document.getElementById('board_type').value;
 
-            // 依篩選條件篩選資料
             const filteredCoaches = coachData.filter(coach => {
+                const matchBoardType = board_type 
+                    ? coach.衝浪板類型.split('/').some(type => type.includes(board_type)) 
+                    : true;
+
                 return (!location || coach.地區 === location) &&
                        (!gender || coach.性別 === gender) &&
-                       (!board_type || coach.衝浪板類型 === board_type);
+                       matchBoardType;
             });
-
-            // 隨機排列教練卡
-            const shuffledCoaches = filteredCoaches.sort(() => Math.random() - 0.5);
 
             const coachList = document.getElementById('coach-list');
             coachList.innerHTML = '';
 
-            shuffledCoaches.forEach(coach => {
-                const coachCard = `
-                    <div class="coach-card">
-                        <img src="${coach.photo_url}" style="max-width: 100%; height: auto;">
-                        <h2>${coach.教練}</h2> 
-                        <p>地區: ${coach.地區}</p>
-                        <p>性別: ${coach.性別}</p>
-                        <p>衝浪板類型: ${coach.衝浪板類型}</p>
-                        <p>賽事級別: ${coach.賽事級別}</p>
-                        <p>IG聯絡方式: <a href="https://instagram.com/${coach.IG聯絡方式}" target="_blank">${coach.IG聯絡方式 || 'N/A'}</a></p>
-                        <p>衝浪學校IG: <a href="https://instagram.com/${coach.衝浪學校IG}" target="_blank">${coach.衝浪學校IG || 'N/A'}</a></p>
-                        <iframe width="560" height="315" src="${coach.video_url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                `;
-                coachList.innerHTML += coachCard;
-            });
+            if (filteredCoaches.length === 0) {
+                // 無符合條件的結果，顯示提示訊息
+                coachList.innerHTML = `<p style="color: red; font-weight: bold;">目前此條件無適合人選</p>`;
+            } else {
+                // 顯示符合條件的教練資料
+                filteredCoaches.forEach(coach => {
+                    const coachCard = `
+                        <div class="coach-card">
+                            <img src="${coach.photo_url}" alt="${coach.教練}">
+                            <h2>${coach.教練}</h2>
+                            <p>地區: ${coach.地區}</p>
+                            <p>性別: ${coach.性別}</p>
+                            <p>衝浪板類型: ${coach.衝浪板類型}</p>
+                            <p>賽事級別: ${coach.賽事級別}</p>
+                            <p>IG聯絡方式: <a href="https://instagram.com/${coach.IG聯絡方式}" target="_blank">${coach.IG聯絡方式 || 'N/A'}</a></p>
+                            <p>衝浪學校IG: <a href="https://instagram.com/${coach.衝浪學校IG}" target="_blank">${coach.衝浪學校IG || 'N/A'}</a></p>
+                            <iframe src="${coach.video_url}" title="YouTube video player" allowfullscreen></iframe>
+                        </div>
+                    `;
+                    coachList.innerHTML += coachCard;
+                });
+            }
         }
     </script>
-
-    <footer>
-        <p>&copy; 2024 Surf Coach Finder. All rights reserved.</p>
-    </footer>
-
 </body>
 </html>
